@@ -76,7 +76,8 @@ export default async ({ req, res, log, error }) => {
     // 7. TRẢ VỀ KẾT QUẢ THÀNH CÔNG
     return res.json({
       valid: true,
-      expiredAt: license.expiredAt
+      expiredAt: license.expiredAt,
+      usageLimit: license.usageLimit || 0
     });
 
   } catch (err) {
