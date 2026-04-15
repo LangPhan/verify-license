@@ -59,13 +59,14 @@ export default async ({ req, res, log, error }) => {
         license.$id,
         { deviceId }
       );
-    } else if (
-      license.deviceId &&
-      deviceId &&
-      license.deviceId !== deviceId
-    ) {
-      return res.json({ valid: false, reason: "device_mismatch" });
-    }
+    } 
+    // else if (
+    //   license.deviceId &&
+    //   deviceId &&
+    //   license.deviceId !== deviceId
+    // ) {
+    //   return res.json({ valid: false, reason: "device_mismatch" });
+    // }
 
     // Nếu hết lượt sử dụng
     if ((license.usageLimit || 0) <= 0) {
